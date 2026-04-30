@@ -1,76 +1,67 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop (JVM).
+# Newsly - Modern Space News Reader 🚀
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+**Newsly** adalah aplikasi pembaca berita modern yang dibangun menggunakan **Compose Multiplatform (Kotlin Multiplatform)**. Aplikasi ini dirancang untuk memberikan pengalaman membaca berita luar angkasa yang elegan, cepat, dan interaktif dengan dukungan penuh untuk mode gelap.
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
-
-### Build and Run Android Application
-
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
-
-### Build and Run Desktop (JVM) Application
-
-To build and run the development version of the desktop app, use the run configuration from the run widget
-in your IDE’s toolbar or run it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:run
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:run
-  ```
-
-### Build and Run Web Application
-
-To build and run the development version of the web app, use the run configuration from the run widget
-in your IDE's toolbar or run it directly from the terminal:
-- for the Wasm target (faster, modern browsers):
-  - on macOS/Linux
-    ```shell
-    ./gradlew :composeApp:wasmJsBrowserDevelopmentRun
-    ```
-  - on Windows
-    ```shell
-    .\gradlew.bat :composeApp:wasmJsBrowserDevelopmentRun
-    ```
-- for the JS target (slower, supports older browsers):
-  - on macOS/Linux
-    ```shell
-    ./gradlew :composeApp:jsBrowserDevelopmentRun
-    ```
-  - on Windows
-    ```shell
-    .\gradlew.bat :composeApp:jsBrowserDevelopmentRun
-    ```
-
-### Build and Run iOS Application
-
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+Aplikasi ini dikembangkan untuk memenuhi **Tugas 6 Praktikum Pemrograman Aplikasi Mobile (PAM)**.
 
 ---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+## 🌟 Fitur Utama (Sesuai Instruksi Tugas)
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).
+1.  **Fetch Data Real-time**: Mengambil berita terbaru dari API publik secara asinkron.
+2.  **Daftar Berita Modern**: Menampilkan list artikel dengan Judul, Gambar, Ringkasan, dan Nama Sumber.
+3.  **Halaman Detail**: Menampilkan konten berita secara lengkap dengan tata letak *edge-to-edge*.
+4.  **Pull to Refresh**: Memperbarui berita terbaru hanya dengan menarik layar ke bawah.
+5.  **State Management**: Penanganan kondisi *Loading* (dengan Shimmer), *Success* (dengan Animasi), dan *Error* (dengan tombol Retry).
+6.  **Repository Pattern**: Pemisahan logika data dan UI menggunakan arsitektur yang bersih.
+
+## ✨ Fitur Unggulan (Bonus)
+
+*   🔍 **Fitur Pencarian**: Cari berita berdasarkan kata kunci judul atau isi berita.
+*   ❤️ **Sistem Favorit**: Simpan artikel yang disukai ke tab "Saved" untuk dibaca nanti.
+*   👤 **Profil Interaktif**: Halaman profil yang menampilkan identitas pengguna beserta foto asli.
+*   ✏️ **Edit Profil**: Pengguna dapat mengubah Nama dan Bio secara langsung melalui Dialog Box.
+*   🌙 **Dark Mode**: Mendukung tema gelap yang nyaman untuk mata saat membaca di malam hari.
+*   🪄 **Animasi Premium**: Transisi halus saat memuat data dan berpindah halaman.
+
+---
+
+## 🔌 API yang Digunakan
+
+Aplikasi ini menggunakan **[Spaceflight News API (v4)](https://api.spaceflightnewsapi.net/v4/articles/)**.
+*   **Kenapa API ini?**: API ini menyediakan data berita nyata (bukan dummy) tentang eksplorasi luar angkasa, lengkap dengan gambar berkualitas tinggi.
+*   **Kelebihan**: Tidak memerlukan API Key (Public Access), sehingga memudahkan proses instalasi dan pengecekan oleh penilai tanpa hambatan autentikasi.
+
+---
+
+## 🛠️ Teknologi & Library
+
+*   **Compose Multiplatform**: Framework UI utama untuk Android dan Desktop.
+*   **Ktor Client**: Library networking untuk melakukan HTTP request ke API.
+*   **Coil3**: Library modern untuk memuat dan menampilkan gambar dari internet.
+*   **Kotlinx Serialization**: Untuk parsing data JSON dari API ke objek Kotlin.
+*   **ViewModel & StateFlow**: Untuk manajemen state aplikasi yang reaktif.
+
+---
+
+## 🚀 Cara Menjalankan Aplikasi
+
+Pastikan Anda sudah menginstal **Android Studio** versi terbaru (Ladybug atau Koala) dan **JDK 17/21**.
+
+1.  **Clone Repository**:
+    ```bash
+    git clone https://github.com/15-069-ZahwaNatasyaHamzah/TUGAS-6-PAM-RA.git
+    ```
+2.  **Buka di Android Studio**:
+    *   Klik `File` > `Open` > Pilih folder `Tugas6PAM`.
+    *   Tunggu proses **Gradle Sync** selesai (pastikan koneksi internet stabil).
+3.  **Jalankan di Emulator/HP**:
+    *   Pilih konfigurasi run `composeApp`.
+    *   Pilih emulator atau perangkat Android fisik Anda.
+    *   Klik tombol **Run (Segitiga Hijau)**.
+
+---
+
+**Dibuat oleh:**
+Zahwa Natasya Hamzah (123140069)
+Mahasiswa Informatika - Institut Teknologi Sumatera (ITERA)
