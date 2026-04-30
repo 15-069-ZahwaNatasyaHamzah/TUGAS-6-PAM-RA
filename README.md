@@ -50,5 +50,5 @@ Aplikasi ini menggunakan **[Spaceflight News API (v4)](https://api.spaceflightne
 |<img width="435" height="796" alt="image" src="https://github.com/user-attachments/assets/410f30f9-e015-48db-bfc6-3f3a8a5e5673" />|<img width="436" height="792" alt="image" src="https://github.com/user-attachments/assets/c5dbc735-4baa-4950-aa74-564147f3abd1" />|<img width="437" height="799" alt="image" src="https://github.com/user-attachments/assets/6c910d25-fb1d-4ec4-b6b9-fef4582bb7fd" />|<img width="435" height="798" alt="image" src="https://github.com/user-attachments/assets/44be6fdf-af78-4659-a0df-19e26b97f196" />|
 
 ##  Video Demo
-<img width="720" height="1280" alt="Image" src="https://github.com/user-attachments/assets/803699fa-565f-40f8-9a66-19dc286f72e5" />
+Video demo fitur aplikasi dapat diakses melalui tautan berikut : https://github.com/user-attachments/assets/803699fa-565f-40f8-9a66-19dc286f72e5 
 
